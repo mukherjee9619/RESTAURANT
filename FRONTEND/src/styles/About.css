@@ -1,0 +1,262 @@
+/* =======================
+   ABOUT PAGE - LUXURY STYLE (SINGLE COLUMN, FULLY RESPONSIVE)
+   ======================= */
+.about-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(60px, 8vw, 100px) 5vw;
+  background: radial-gradient(circle at top, #3b1f0a, #1a0f08);
+  background-attachment: fixed;
+  color: #f8eac6;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* Light Mode */
+.light-mode .about-page {
+  background: radial-gradient(circle at top, #fff8e1, #f8e6b4);
+  color: #3b1f0a;
+}
+
+/* Magical golden dust background animation */
+.about-page::before,
+.about-page::after {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255,215,0,0.1) 10%, transparent 70%);
+  animation: sparkleRotate 30s linear infinite;
+  opacity: 0.4;
+}
+
+.about-page::after {
+  animation-direction: reverse;
+  opacity: 0.25;
+}
+
+@keyframes sparkleRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Container */
+.about-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: clamp(25px, 5vw, 60px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4),
+              inset 0 0 25px rgba(255, 217, 0, 0.39);
+  text-align: center;
+  transition: all 0.6s ease;
+  margin-top: -20px;
+}
+
+/* Glossy line effect */
+.about-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: glossyMove 6s infinite;
+}
+
+@keyframes glossyMove {
+  0% { left: -75%; }
+  50% { left: 120%; }
+  100% { left: 120%; }
+}
+
+/* Light Mode Box */
+.light-mode .about-container {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(184, 134, 11, 0.4);
+  box-shadow: 0 0 40px rgba(184, 134, 11, 0.4),
+              inset 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+/* Title with shimmer */
+.about-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: 2px;
+  color: #000000;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ff6347, #ffae00, #e74b4b, #4d3c17);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite, glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px rgba(175, 99, 11, 0.808); }
+  100% { text-shadow: 0 0 25px rgb(59, 48, 48); }
+}
+
+/* Paragraph text */
+.about-text {
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  line-height: 1.9;
+  text-align: justify;
+  color: #f8eac6;
+  transition: color 0.5s ease, transform 0.5s ease;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.light-mode .about-text {
+  color: #4a2c0a;
+}
+
+/* Highlighted words */
+.highlight {
+  color: #ff6347;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff4500, #ffd700, #ff0000);
+  border-radius: 2px;
+  opacity: 0.9;
+  transition: width 0.5s ease;
+}
+
+.highlight:hover::after {
+  width: 100%;
+}
+
+.highlight:hover {
+  text-shadow: 0 0 15px rgba(255,215,0,0.9),
+               0 0 30px rgba(255,140,0,0.7);
+  transform: scale(1.05);
+}
+
+/* Light mode highlight */
+.light-mode .highlight {
+  color: #b8860b;
+}
+
+.light-mode .highlight::after {
+  background: linear-gradient(90deg, #b8860b, #ffcc33, #ff7b00);
+}
+
+/* Final glowing line */
+.final-line {
+  display: block;
+  margin-top: 35px;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: #ffcc33;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+  animation: softGlow 3s ease-in-out infinite alternate;
+}
+
+.light-mode .final-line {
+  color: #ff7b00;
+}
+
+@keyframes softGlow {
+  0% { text-shadow: 0 0 12px rgba(255,215,0,0.5); }
+  100% { text-shadow: 0 0 28px rgba(255,215,0,0.9); }
+}
+
+/* Fade In Effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================
+   RESPONSIVE DESIGN
+   ====================== */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .about-container {
+    padding: 50px 35px;
+  }
+}
+
+/* Tablets and Large Phones */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 60px 5vw;
+  }
+  .about-container {
+    padding: 35px 25px;
+    border-radius: 20px;
+  }
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-text {
+    font-size: 1rem;
+  }
+  .final-line {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 40px 5vw;
+  }
+  .about-container {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+  .about-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .final-line {
+    font-size: 1rem;
+    margin-top: 25px;
+  }
+}
+
+/* Ultra-small devices */
+@media (max-width: 360px) {
+  .about-container {
+    padding: 20px 15px;
+  }
+  .about-title {
+    font-size: 1.4rem;
+  }
+  .about-text {
+    font-size: 0.9rem;
+  }
+}

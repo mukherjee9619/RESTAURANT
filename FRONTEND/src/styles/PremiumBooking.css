@@ -1,0 +1,64 @@
+ .premium-theme {
+  text-align: center;
+  background: linear-gradient(135deg, #3d0000, #7a2400);
+  color: white;
+  padding: 50px 20px;
+  min-height: 100vh;
+  font-family: "Playfair Display", serif;
+}
+
+.premium-theme h1 {
+  color: gold;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+}
+
+.premium-theme p {
+  color: #f9e8c5;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid gold;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: rgba(50, 0, 0, 0.6);
+  color: #fff;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+  color: #e5c28a;
+}
+
+.booking-form button {
+  margin-top: 15px;
+  background: linear-gradient(135deg, #ffd700, #ffb800);
+  color: black;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+}

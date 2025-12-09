@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap");
+
+/* === Fully Isolated Register Page === */
+.register-page {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #000000, #2c2c2c, #000000);
+  color: #fff;
+  height: 100vh; /* full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 10px; /* small padding for mobile */
+}
+
+.register-page .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* === Registration Container === */
+.register-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(25, 25, 25, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 25px gold;
+  width: 100%;
+  max-width: 380px; /* slightly smaller to fit vertically */
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center content vertically */
+  max-height: 90vh; /* fit inside viewport */
+  overflow: hidden; /* prevent scrollbars */
+  animation: fadeIn 1s ease-in-out;
+}
+.register-container:hover {
+   transform: translateX(-2px);
+  box-shadow: 0 0 50px rgb(255, 0, 0);
+}
+/* === Title === */
+.register-container h2 {
+  font-family: "Playfair Display", serif;
+  color: gold;
+  text-align: center;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+/* === Form Labels === */
+.register-container label {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Colored labels */
+.register-container label[for="fullname"] { color: #ffcc00; text-shadow: 0 0 6px #ffcc00; }
+.register-container label[for="phone"] { color: #00ffcc; text-shadow: 0 0 6px #00ffea; }
+.register-container label[for="email"] { color: #ffaaff; text-shadow: 0 0 6px #ff77ff; }
+.register-container label[for="password"] { color: #00e676; text-shadow: 0 0 6px #00e676; }
+
+/* === Input Fields === */
+.register-container input {
+  width: 95%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.95em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.register-container input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px gold;
+}
+
+/* === Button === */
+.register-container button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, gold,red,gold);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+  box-shadow: 0 0 15px gold;
+}
+
+.register-container button:hover {
+  background: linear-gradient(90deg,red,gold, red);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px red;
+}
+
+/* === Login link below register form === */
+.register-container .login-link {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #ffffff;
+}
+
+.register-container .login-link .login-text {
+  color: red;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.register-container .login-link .login-text:hover {
+  color: gold;
+  text-shadow: 0 0 8px rgb(0, 0, 0);
+}
+
+/* === Responsive === */
+@media (max-height: 700px) {
+  .register-container {
+    padding: 20px 15px;
+    max-width: 350px;
+  }
+  .register-container h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .register-container input {
+    padding: 8px 10px;
+    margin-bottom: 12px;
+  }
+  .register-container button {
+    padding: 8px;
+    font-size: 0.95em;
+  }
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

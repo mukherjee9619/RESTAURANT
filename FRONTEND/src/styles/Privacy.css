@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --gold: #ffd700;
+  --bg-dark-1: #1a0f0a;
+  --bg-dark-2: #3b2314;
+  --text-light: #fffaf0;
+  --card-light: #fff;
+  --muted: #7a6b50;
+  --accent: #b8860b;
+}
+
+/* ==============================
+   MAIN CONTAINER
+============================== */
+.privacy-container {
+  min-height: 100vh;
+  padding: 60px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  font-family: "Inter", system-ui;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* DARK MODE */
+body.dark-mode .privacy-container {
+  background: radial-gradient(circle at top left, var(--bg-dark-2), var(--bg-dark-1) 70%);
+  color: var(--text-light);
+}
+
+/* LIGHT MODE */
+body.light-mode .privacy-container {
+  background: linear-gradient(180deg, #fffaf0 0%, #fff 100%);
+  color: #2c1a0e;
+}
+
+/* ==============================
+   CARD
+============================== */
+.privacy-card {
+  width: 100%;
+  max-width: 960px;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 30px rgba(13, 12, 10, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.35s ease;
+}
+
+/* Light Mode Override */
+body.light-mode .privacy-card {
+  background: var(--card-light);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ==============================
+   HEADER
+============================== */
+.privacy-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.privacy-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   SECTIONS
+============================== */
+.privacy-section {
+  margin: 24px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.privacy-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.privacy-section h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.privacy-section h3 {
+  margin-top: 12px;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.privacy-section p,
+.privacy-section ul {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.privacy-section ul {
+  margin: 8px 0 0 18px;
+}
+
+.nested {
+  list-style: disc;
+  margin-left: 24px;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+.privacy-footer {
+  margin-top: 20px;
+  text-align: left;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.privacy-footer.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+.privacy-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  background: var(--gold);
+  color: #2c1a0e;
+  border: none;
+  padding: 12px 22px;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.35);
+}
+.btn.outline {
+  background: transparent;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: inherit;
+}
+.btn.outline:hover {
+  background: rgba(255, 215, 0, 0.08);
+}
+
+/* ==============================
+   LINKS
+============================== */
+a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 720px) {
+  .privacy-card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .privacy-header h1 {
+    font-size: 1.6rem;
+  }
+  .privacy-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+  }
+}

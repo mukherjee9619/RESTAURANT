@@ -1,0 +1,192 @@
+/* === Blog Section === */
+.blog-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  text-align: center;
+  color: #f8eac6;
+  background: radial-gradient(circle at top, #1a0f08, #3b1f0a);
+  transition: all 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-mode .blog-section {
+  background: radial-gradient(circle at top, #ffffff, #967482d3);
+  color: #3b1f08;
+}
+
+/* === Header === */
+.blog-header {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.blog-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+  animation: fadeInGlow 2s ease-in-out;
+}
+
+.light-mode .blog-title {
+  color: #000000c0;
+  text-shadow: 0 0 30px rgba(236, 11, 11, 0.897);
+}
+
+.blog-subtitle {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.light-mode .blog-subtitle {
+  color: #d8611c;
+}
+
+/* === Blog Container === */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* === Blog Card === */
+.blog-card {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 60px rgba(255, 215, 0, 0.6);
+}
+
+/* === Blog Image === */
+.blog-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.05);
+}
+
+/* === Blog Content === */
+.blog-content {
+  padding: 25px 20px 30px;
+}
+
+.blog-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #ffcc33;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.blog-description {
+  font-size: 1rem;
+  color: #f5e8c5;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.light-mode .blog-card {
+  background-color: #e2b4b49a;
+}
+
+.light-mode .blog-name {
+  color: #d8611c;
+}
+
+.light-mode .blog-description {
+  color: #570000;
+}
+
+.dark-mode .blog-description {
+  color: #ff6b6b !important;
+  text-shadow: 0 0 8px rgba(255, 60, 60, 0.5);
+}
+
+/* === Button === */
+.blog-btn {
+  padding: 10px 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+  background: linear-gradient(90deg, gold, red, gold);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  transition: all 0.4s ease;
+}
+
+.blog-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(90deg, red, gold, red);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInGlow {
+  0% { opacity: 0; text-shadow: 0 0 10px rgba(255,136,0,0.7); }
+  100% { opacity: 1; text-shadow: 0 0 25px rgba(255,215,0,0.9); }
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .blog-title {
+    font-size: 2.5rem;
+  }
+  .blog-subtitle {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .blog-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-title {
+    font-size: 1.8rem;
+  }
+  .blog-subtitle {
+    font-size: 1rem;
+  }
+  .blog-description {
+    font-size: 0.9rem;
+  }
+  .blog-btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}

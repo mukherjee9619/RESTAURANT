@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap");
+
+.login-page {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #000, #1b1b1b, #000);
+  background-image: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80");
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-page .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.login-container {
+  position: relative;
+  z-index: 2;
+  width: 400px;
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  animation: fadeIn 1s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.7);
+}
+
+/* --- Title --- */
+.title {
+  font-family: "Playfair Display", serif;
+  color: #d4af37; /* Royal gold */
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Light mode clarity fix */
+body.light-mode .title {
+  color: #b8860b;
+  text-shadow: none;
+}
+
+/* --- Labels & Inputs --- */
+.login-container label {
+  display: block;
+  font-weight: 500;
+  color: #f5f5f5;
+  margin-bottom: 6px;
+}
+
+.login-container input {
+  width: 95%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.login-container input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px #ffd700;
+}
+
+/* --- Button --- */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff0000, gold);
+  color: #000;
+  font-weight: 600;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.login-container button:hover {
+  background: linear-gradient(90deg, gold, red);
+  transform: scale(1.05);
+}
+
+/* --- Switch Link --- */
+.switch-link {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.95em;
+  color: #ddd;
+}
+
+.gold-link {
+  color: gold;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.gold-link:hover {
+  color: red;
+  text-shadow: 0 0 5px #000;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .login-container { width: 90%; padding: 30px 20px; }
+  .title { font-size: 1.6em; }
+}

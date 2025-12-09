@@ -1,0 +1,38 @@
+.menu-card {
+  background: linear-gradient(145deg, #fff8f0, #fef6ec);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+.menu-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0d7c6;
+}
+.menu-content {
+  padding: 16px;
+}
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.menu-footer button {
+  background: #b38b2f;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.menu-footer button:hover {
+  background: #d4aa4c;
+}

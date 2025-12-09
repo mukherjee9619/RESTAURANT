@@ -1,0 +1,233 @@
+/* ==============================================
+ 🌟 GOLDEN SPOON — BLOG DETAIL PAGE (Fully Responsive)
+============================================== */
+
+/* === Blog Detail Section === */
+.blog-detail-section {
+  min-height: 80vh;
+  padding: 80px 20px;
+  position: relative;
+  color: #f8eac6;
+  background: radial-gradient(circle at top, #1a0f08, #3b1f0a);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.8;
+  transition: all 0.5s ease;
+  overflow-x: hidden;
+}
+
+.light-mode .blog-detail-section {
+  background: radial-gradient(circle at top, #fff8e1, #f8e6b4);
+  color: #3b1f08;
+}
+
+/* === Back Button === */
+.back-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ffcc33, #ff6600);
+  color: #1a0f08;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+}
+
+/* === Blog Detail Container === */
+.blog-detail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  padding: 50px;
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.4);
+  backdrop-filter: blur(15px);
+  margin-top: 60px;
+  transition: all 0.4s ease;
+}
+
+.light-mode .blog-detail-container {
+  background: rgba(231, 209, 209, 0.85);
+  box-shadow: 0 0 40px rgba(255, 128, 0, 0.3);
+}
+
+/* === Image === */
+.blog-detail-image {
+  width: 380px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid gold;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-detail-image:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
+}
+
+/* === Text Info === */
+.blog-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.blog-detail-name {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  color: #ffcc33;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  text-align: left;
+  margin-bottom: 10px;
+  transition: all 0.4s ease;
+}
+
+.blog-detail-description {
+  font-size: 1.15rem;
+  color: #f5e8c5;
+  margin-top: 10px;
+  line-height: 1.8;
+  white-space: pre-line;
+  text-align: justify;
+}
+
+/* === Light / Dark Adjustments === */
+.light-mode .blog-detail-name {
+  color: #5a1919;
+  text-shadow: 0 0 12px rgba(255, 130, 0, 0.4);
+}
+
+.dark-mode .blog-detail-name {
+  color: #df5414;
+  text-shadow: 0 0 12px rgba(255, 90, 0, 0.5);
+}
+
+.light-mode .blog-detail-description {
+  color: #4a2c0a;
+}
+
+/* ==============================================
+   📱 RESPONSIVE DESIGN
+============================================== */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .blog-detail-container {
+    gap: 30px;
+    padding: 40px;
+  }
+  .blog-detail-image {
+    width: 320px;
+    height: 360px;
+  }
+  .blog-detail-name {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .blog-detail-description {
+    font-size: 1.05rem;
+  }
+  .back-btn {
+    top: 25px;
+    left: 25px;
+    padding: 8px 18px;
+  }
+}
+
+/* Mobiles (≤768px) */
+@media (max-width: 768px) {
+  .blog-detail-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 25px;
+  }
+
+  .blog-detail-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .blog-detail-name {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+
+  .blog-detail-description {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .back-btn {
+    position: relative;
+    align-self: flex-start;
+    margin-bottom: 15px;
+  }
+}
+
+/* Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .blog-detail-section {
+    padding: 60px 15px;
+  }
+
+  .blog-detail-container {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .blog-detail-image {
+    max-width: 260px;
+    border-radius: 15px;
+  }
+
+  .blog-detail-name {
+    font-size: 1.5rem;
+  }
+
+  .blog-detail-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 7px 14px;
+  }
+}
+
+/* Ultra-small Devices (≤360px) */
+@media (max-width: 360px) {
+  .blog-detail-image {
+    max-width: 220px;
+  }
+
+  .blog-detail-name {
+    font-size: 1.3rem;
+  }
+
+  .blog-detail-description {
+    font-size: 0.9rem;
+  }
+}

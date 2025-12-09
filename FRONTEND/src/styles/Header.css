@@ -1,0 +1,425 @@
+/* -------------------------------------
+   BASE HEADER STYLES
+------------------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== LIGHT MODE ===== */
+.navbar.light {
+  background: linear-gradient(90deg, #fff8e1, #ffe57f);
+  color: #2b180f;
+}
+
+.navbar.light .nav-title {
+  color: #b8860b;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.navbar.light .icon {
+  color: #5a3c12;
+}
+
+/* ===== DARK MODE ===== */
+.navbar.dark {
+  background: linear-gradient(90deg, #0b0502, #1a0f0a);
+  color: #fff;
+}
+
+.navbar.dark .nav-title {
+  color: #ffd700;
+}
+
+.navbar.dark .icon {
+  color: #ffd700;
+}
+
+/* -------------------------------------
+   LEFT: LOGO + TITLE
+------------------------------------- */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.nav-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* -------------------------------------
+   SPOON ICONS
+------------------------------------- */
+.spoon {
+  font-size: 1.8rem;
+  margin: 0 2px;
+  color: #ffd700;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: transform 0.8s ease, color 0.4s ease;
+}
+
+.spoon-up {
+  transform: rotate(90deg);
+  animation-name: rotate-clockwise;
+}
+.spoon-down {
+  transform: rotate(-90deg);
+  animation-name: rotate-anticlockwise;
+}
+
+@keyframes rotate-clockwise {
+  0% { transform: rotate(90deg); }
+  100% { transform: rotate(450deg); }
+}
+@keyframes rotate-anticlockwise {
+  0% { transform: rotate(-90deg); }
+  100% { transform: rotate(-450deg); }
+}
+
+/* -------------------------------------
+   NAV LINKS
+------------------------------------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: all 0.4s ease;
+}
+
+.nav-links a,
+.dropdown-btn {
+  all: unset;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.nav-links a::after,
+.dropdown-btn::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.dropdown-btn:hover::after,
+.nav-links a.active::after,
+.dropdown-btn.active::after {
+  width: 100%;
+}
+
+/* -------------------------------------
+   DROPDOWN
+------------------------------------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  min-width: 160px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.dropdown-content.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-content a {
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255, 215, 0, 0.15);
+  color: #ff4500;
+  padding-left: 18px;
+}
+
+/* -------------------------------------
+   RIGHT ICONS
+------------------------------------- */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.icon {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.icon:hover {
+  transform: scale(1.15);
+}
+
+.cart-icon-wrapper {
+  position: relative;
+}
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff4500;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+  animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  to { transform: translateY(-2px); }
+}
+
+/* -------------------------------------
+   BUTTONS
+------------------------------------- */
+.toggle-btn {
+  background: linear-gradient(90deg, #ff8c00, #ff4500);
+  border: none;
+  border-radius: 25px;
+  padding: 8px 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.logout-btn {
+  background: linear-gradient(90deg, #ff4500, #ffae00);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+}
+.logout-btn:hover {
+  transform: scale(1.08);
+}
+
+/* -------------------------------------
+   HAMBURGER MENU
+------------------------------------- */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* -------------------------------------
+   RESPONSIVE DESIGN
+------------------------------------- */
+
+/* 🖥️ 4K & Ultra-wide monitors (≥1600px) */
+@media (min-width: 1600px) {
+  .nav-title {
+    font-size: 2.2rem;
+  }
+  .nav-links {
+    gap: 40px;
+  }
+  .icon {
+    font-size: 1.6rem;
+  }
+  .nav-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* 💻 Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .nav-title {
+    font-size: 1.5rem;
+    
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .navbar {
+    padding: 12px 24px;
+  }
+}
+
+/* 📱 Mobile (≤768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    padding: 0;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    background: inherit;
+    backdrop-filter: blur(14px);
+    padding: 24px;
+    gap: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+    gap: 5px;
+    padding: 0;
+  }
+
+  .nav-icons {
+    gap: 12px;
+  }
+
+  .nav-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 📲 Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 18px;
+  }
+  .nav-title {
+    font-size: 1.2rem;
+    display: none;
+
+  }
+  .nav-logo {
+    width: 38px;
+    height: 38px;
+  }
+  .icon {
+    font-size: 1.2rem;
+  }
+  .toggle-btn {
+    padding: 6px 10px;
+  }
+  .nav-links {
+    padding: 18px;
+  }
+}
+
+/* 🧭 Extra Small Devices (≤350px, e.g., older phones or watches) */
+@media (max-width: 350px) {
+  .nav-title {
+    font-size: 1rem;
+    display: none;
+
+  }
+  .nav-links a,
+  .dropdown-btn {
+    font-size: 0.9rem;
+  }
+  .logout-btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+  .nav-logo {
+    width: 34px;
+    height: 34px;
+  }
+  .icon {
+    font-size: 1rem;
+  }
+  .cart-count {
+    font-size: 0.65rem;
+  }
+}
+
+/* 🖼 Landscape Mode Fix (phones turned sideways) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .nav-links {
+    padding: 10px;
+    gap: 12px;
+  }
+  .nav-title {
+    font-size: 1rem;
+    display: none;
+  }
+}

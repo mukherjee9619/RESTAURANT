@@ -1,0 +1,289 @@
+/* 📁 Footer.css */
+.footer {
+  padding: 80px 10%;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  border-top: 3px solid transparent;
+  padding-bottom: 100px; /* space for sticky footer */
+}
+
+/* 🌙 DARK MODE */
+.footer.dark-mode {
+  background: linear-gradient(to top, #0a0a0a, #1a0f07 80%);
+  color: #d1b464;
+  border-top-color: #c9a000;
+  box-shadow: 0 -5px 25px rgba(255, 215, 0, 0.1);
+}
+
+.footer.dark-mode::before {
+  background: linear-gradient(90deg, #c9a000, #ffd700, #c9a000);
+}
+
+/* ☀️ LIGHT MODE */
+.footer.light-mode {
+  background: linear-gradient(to top, #fff8e1, #ffffff);
+  color: #3b3b3b;
+  border-top-color: #ffd700;
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.footer.light-mode::before {
+  background: linear-gradient(90deg, #ffd700, #ffae00, #ffd700);
+}
+
+/* Glow line */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Layout */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.footer.light-mode .footer-top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+.light-mode .footer-logo {
+  color: #b8860b;
+  text-shadow: none;
+}
+
+/* Paragraphs */
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: inherit;
+}
+
+/* Headings */
+.footer-section h3 {
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: inherit;
+}
+
+/* Links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  font-size: 14px;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-section ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-section ul li:hover {
+  color: #ffd700;
+  transform: translateX(6px);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.social-icons a {
+  background: #ffd700;
+  color: #1a1a1a !important;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.light-mode .social-icons a {
+  background: #000;
+  color: #ffd700 !important;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Contact Info */
+.contact p {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+/* App Buttons */
+.app-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.app-btn {
+  background: #ffd700;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.light-mode .app-btn {
+  background: #000;
+  color: #ffd700;
+}
+
+.app-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* === Sticky Copyright Bar === */
+.footer-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffd700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 6%;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -2px 15px rgba(255, 215, 0, 0.3);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.light-mode .footer-bottom {
+  background: rgba(255, 255, 255, 0.95);
+  color: #3b3b3b;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Icons + Text */
+.footer-bottom .payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-bottom .payment-icons img {
+  height: 24px;
+  transition: 0.3s ease;
+}
+
+.footer-bottom .payment-icons span {
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
+}
+
+.footer-bottom .payment-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+ 
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 6%;
+    padding-bottom: 100px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer-bottom .payment-icons {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  
+}
+
+@media (max-width: 480px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .footer-bottom .payment-icons img {
+    height: 20px;
+  }
+
+  .footer-bottom .payment-icons span {
+    font-size: 12px;
+  }
+  
+}
+

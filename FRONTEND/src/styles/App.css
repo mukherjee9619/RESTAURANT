@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --gold: #FFD700;
+  --dark-brown: #3b1f0a;
+  --deep-black: #0e0e0e;
+  --rich-red: #b22222;
+  --light-gold: #fff8e1;
+  --warm-brown: #5a2d0d;
+  --shadow: rgba(0,0,0,0.35);
+}
+
+/* GLOBAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.8s ease, color 0.8s ease;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background: linear-gradient(135deg, var(--deep-black), var(--dark-brown));
+  color: var(--gold);
+}
+
+/* LIGHT MODE */
+body.light-mode {
+  background: linear-gradient(135deg, var(--light-gold), var(--deep-black));
+  color: var(--deep-black);
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  margin: 0 0 12px 0;
+  transition: color 0.8s ease;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+  color: var(--gold);
+}
+body.light-mode h1{
+  color: var(--dark-brown);
+}
+
+ body.light-mode h3{
+  color: var(--#20db4f);
+}
+
+
+/* PARAGRAPH + LINKS */
+p { font-size: 1rem; transition: color 0.8s ease; }
+body.dark-mode p { color: var(--gold); }
+body.light-mode p { color: var(--light-gold); }
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+body.dark-mode a { color: var(--gold); }
+body.light-mode a { color: var(--rich-red); }
+
+a:hover { color: var(--rich-red); text-shadow: 0 0 8px var(--gold); }
+
+/* BUTTONS */
+button, .btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--rich-red), var(--gold));
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px var(--shadow);
+}
+button:hover, .btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(90deg, var(--gold), var(--rich-red));
+  box-shadow: 0 0 25px rgba(255,215,0,0.8);
+}
+
+/* SECTION */
+.section {
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  text-align: center;
+  box-shadow: 0 8px 25px var(--shadow);
+  transition: background 0.8s ease, color 0.8s ease;
+}
+body.dark-mode .section {
+  background: linear-gradient(135deg, rgba(59,31,10,0.9), rgba(26,15,8,0.9));
+  color: var(--gold);
+}
+body.light-mode .section {
+  background: linear-gradient(135deg, rgba(255,244,214,0.95), rgba(255,228,155,0.9));
+  color: var(--deep-black);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.8s ease, color 0.8s ease;
+}
+body.dark-mode footer {
+  background: linear-gradient(135deg, var(--deep-black), var(--dark-brown));
+  color: var(--gold);
+  border-top: 2px solid var(--gold);
+}
+body.light-mode footer {
+  background: linear-gradient(135deg, #fff8e1, #e6c77c);
+  color: var(--dark-brown);
+  border-top: 2px solid var(--gold);
+}

@@ -1,0 +1,219 @@
+.menu-page {
+  min-height: 100vh;
+  font-family: "Playfair Display", serif;
+  transition: background 0.4s ease, color 0.4s ease;
+  background: radial-gradient(circle at top left, #3b2314, #1a0f0a 70%);
+  color: #f4f4f4;
+}
+
+/* =======================
+   DARK MODE
+======================= */
+.menu-page.dark {
+  background: radial-gradient(circle at top left, #3b2314, #1a0f0a 70%);
+  color: #f4f4f4;
+}
+
+/* =======================
+   LIGHT MODE
+======================= */
+.menu-page.light {
+  background: radial-gradient(circle at top left, #fffaf3, #f1e2c6 70%);
+  color: #2b1810;
+}
+
+/* =======================
+   HEADER
+======================= */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: linear-gradient(90deg, #4a2b14, #1a0f0a);
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.7rem;
+  border-bottom: 2px solid #caa756;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.menu-page.light .menu-header {
+  background: linear-gradient(90deg, #f8e5b6, #fdf7e3);
+  color: #4b2e15;
+  border-color: #d9b58f;
+  text-shadow: none;
+}
+
+.mode-toggle {
+  background: linear-gradient(45deg, #ffb800, #ff6a00);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.mode-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 184, 0, 0.6);
+}
+
+/* =======================
+   CARD STYLING
+======================= */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.menu-page.light .card {
+  background: #ffffffee;
+  color: #2b1810;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+  filter: brightness(0.9);
+}
+
+.card-content h2 {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin: 12px 0 6px;
+}
+
+.menu-page.light .card-content h2 {
+  color: #b8860b;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  padding: 0 15px;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+.menu-page.light .card-content p {
+  color: #4b2e15;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.price {
+  color: #ffcc33;
+  font-weight: bold;
+}
+
+.veg {
+  background: #009c67;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.non-veg {
+  background: #c41e3a;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.created-at {
+  color: #aaa;
+}
+
+/* =======================
+   BUTTONS
+======================= */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.add-btn {
+  background: linear-gradient(45deg, #00c851, #009e47);
+}
+
+.order-btn {
+  background: linear-gradient(45deg, #ffb800, #ff6a00);
+}
+
+.btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(255, 184, 0, 0.6);
+}
+
+/* =======================
+   ANIMATION
+======================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== LOADER ===== */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a0f0a 0%, #2a1b11 100%);
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}

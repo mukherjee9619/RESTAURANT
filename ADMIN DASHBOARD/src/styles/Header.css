@@ -1,0 +1,163 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background: radial-gradient(circle at top left, #3b2314, #1a0f0a 70%);
+  margin: 0;
+  padding: 0;
+  color: #f4f4f4;
+  transition: background 0.4s ease;
+}
+
+/* ===========================================================
+   🌟 HEADER SECTION (Golden Spoon Admin Dashboard)
+   =========================================================== */
+.menu-header {
+  background: linear-gradient(135deg, #3b2314, #1a0f0a 70%);
+  color: #f8e9d2;
+  padding: 24px 40px;
+  border-bottom: 2px solid #d4a373;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 18px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  color: #ffa600;
+} 
+
+/* ===========================================================
+   🔹 HEADER TOP ROW
+   =========================================================== */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+} 
+
+/* ===========================================================
+   👨‍💼 ADMIN BADGE
+   =========================================================== */
+.admin-badge {
+  background: #ffa600;
+  color: #2c1810;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+} 
+
+/* ===========================================================
+   🔍 SEARCH BAR
+   =========================================================== */
+ .search-bar {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 10px 16px;
+  border: 2px solid #ff8000;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  background-color: #2b1b12;
+  color: #f4f4f4;
+  transition: 0.3s ease;
+}
+.search-bar input::placeholder{
+  color: #ffa600;
+}
+.search-bar input:focus {
+  border-color: #f8e9d2;
+  background: #3c2416;
+  outline: none;
+  box-shadow: 0 0 8px rgba(212, 163, 115, 0.6);
+} 
+
+/* ===========================================================
+   🗂️ DROPDOWNS
+   =========================================================== */
+ .dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 50px;
+}
+
+.dropdown {
+  background-color: #2b1b12;
+  color: #f4f4f4;
+  border: 1px solid #d4a373;
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover {
+  background-color: #3c2416;
+  border-color: #f8e9d2;
+} 
+
+/* ===========================================================
+   ➕ ADD ITEM BUTTON
+   =========================================================== */
+ .add-btn {
+  background: linear-gradient(135deg, #d31111d5, #da8a1b);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #2b1b12;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(212, 163, 115, 0.5);
+  margin-right: 70px;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #da8b1e, #cc1f1f);
+  box-shadow: 0 6px 12px rgba(255, 149, 0, 0.5);
+} 
+
+/* ===========================================================
+   🌐 RESPONSIVE
+   =========================================================== */
+ @media (max-width: 768px) {
+  .menu-header {
+    padding: 20px;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-badge {
+    align-self: flex-start;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+} 

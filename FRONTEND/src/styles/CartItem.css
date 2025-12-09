@@ -1,0 +1,28 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #fff8f0;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 16px;
+}
+.cart-item button {
+  margin-left: auto;
+  background: #b38b2f;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cart-item button:hover {
+  background: #d4aa4c;
+}

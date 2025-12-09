@@ -1,0 +1,332 @@
+/* 🌟 Golden Spoon – 5-Star Reservation Page */
+
+.reservation-section {
+  min-height: 100vh;
+  padding: 100px 40px;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  margin-top: -50px;
+}
+
+.reservation-header {
+  max-width: 850px;
+  margin-bottom: 60px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.reservation-header h1 {
+  font-size: 2.4rem;
+  color: #f9d342;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.light-mode .reservation-header h1{
+  font-size: 2.8rem;
+  color: #ff9595;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.reservation-header p {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.reservation-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 95px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ✨ Flip 3D Card Container */
+.card-container {
+  perspective: 1200px;
+
+}
+
+.reservation-card {
+  width: 320px;
+  height: 420px;
+  border-radius: 20px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.15);
+  cursor: pointer;
+  
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: center;
+  color: #fff;
+  
+}
+
+.card-front h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card-front .price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ✨ Back Side */
+.card-back {
+  transform: rotateY(180deg);
+  
+}
+
+.card-back ul {
+  list-style: none;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.card-back li {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+/* 🪄 Hover Flip */
+.reservation-card:hover {
+  transform: rotateY(180deg);
+  left: 50px;
+}
+
+/* 🌈 THEMES */
+.gold .card-front {
+  background: linear-gradient(135deg, #af6121, #d3af0f);
+}
+.gold .card-back {
+  background: linear-gradient(135deg, #d4af1b, #c0651f);
+}
+
+.royal-blue .card-front {
+  background: linear-gradient(135deg, #3657eb, #0a30da);
+}
+.royal-blue .card-back {
+  background: linear-gradient(135deg, #030b2b, #506dff);
+}
+
+.ruby-red .card-front {
+  background: linear-gradient(135deg, #770000, #dd0000);
+}
+.ruby-red .card-back {
+  background: linear-gradient(135deg, #360808, #f31d1d);
+}
+
+/* 🌟 Button */
+.reserve-btn {
+  background: #ffa600;
+  color: #000;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reserve-btn:hover {
+  transform: scale(1.08);
+  background: #c94b25;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Fully Optimized Responsive Design */
+@media (max-width: 1200px) {
+  .reservation-cards {
+    gap: 70px;
+  }
+  .reservation-card {
+    width: 300px;
+    height: 400px;
+  }
+  .reservation-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .reservation-section {
+    padding: 80px 25px;
+  }
+  .reservation-header h1 {
+    font-size: 2rem;
+  }
+  .reservation-header p {
+    font-size: 1rem;
+  }
+  .reservation-cards {
+    gap: 60px;
+    justify-content: center;
+  }
+  .reservation-card {
+    width: 280px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reservation-section {
+    padding: 60px 20px;
+  }
+
+  .reservation-header {
+    margin-bottom: 35px;
+  }
+
+  .reservation-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .reservation-header p {
+    font-size: 0.95rem;
+  }
+
+  .reservation-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+  }
+
+  .reservation-card {
+    width: 90%;
+    max-width: 340px;
+    height: 360px;
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15);
+  }
+
+  .card-front h2 {
+    font-size: 1.6rem;
+  }
+
+  .card-front .price {
+    font-size: 1.1rem;
+  }
+
+  .card-back li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservation-section {
+    padding: 50px 15px;
+  }
+
+  .reservation-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .reservation-header p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .reservation-cards {
+    gap: 35px;
+  }
+
+  .reservation-card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    transform: none;
+  }
+
+  /* Disable flip on touch devices */
+  .reservation-card:hover {
+    transform: none;
+  }
+
+  .card-front,
+  .card-back {
+    position: relative;
+    transform: none;
+    backface-visibility: visible;
+  }
+
+  .card-back {
+    display: none;
+  }
+
+  .reservation-card.active .card-back {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .card-front h2 {
+    font-size: 1.4rem;
+  }
+
+  .card-front .price {
+    font-size: 1rem;
+  }
+
+  .reserve-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .reservation-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .reservation-header p {
+    font-size: 0.85rem;
+  }
+
+  .reservation-card {
+    height: auto;
+  }
+
+  .card-front h2 {
+    font-size: 1.25rem;
+  }
+
+  .reserve-btn {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+}

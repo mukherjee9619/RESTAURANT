@@ -1,0 +1,144 @@
+.home-page {
+  min-height: calc(75vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 🌙 DARK MODE */
+.dark-mode {
+  background: radial-gradient(circle at top left, #1a0f0a, #3b2314);
+  color: #ffd700;
+}
+
+/* ☀️ LIGHT MODE */
+.light-mode {
+  background: linear-gradient(135deg, #fff8e1, #fff);
+  color: #333;
+}
+
+/* Title */
+.home-container h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* Paragraph */
+.home-container p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+}
+
+.light-mode .home-container h2,
+.light-mode .home-container p {
+  color: #222;
+  text-shadow: none;
+}
+
+/* Button */
+.order-btn {
+  background: linear-gradient(90deg, #ff4500, #ffd700);
+  padding: 14px 35px;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.theme-toggle button {
+  background: none;
+  border: 2px solid currentColor;
+  border-radius: 25px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Existing Order Button */
+/* .order-btn {
+  background: linear-gradient(90deg, #FF4500, #FFD700);
+  padding: 14px 35px;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255,215,0,0.9);
+} */
+
+/* 🎟️ Reservation Button */
+.reserve-btn {
+  background: linear-gradient(90deg, #006400, #32cd32);
+  padding: 14px 35px;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.reserve-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(50, 205, 50, 0.9);
+}
+
+/* Fade-out effect when navigating */
+.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .home-page {
+    min-height: calc(45vh - 100px);
+  }
+}
