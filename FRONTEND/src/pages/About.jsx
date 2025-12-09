@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section className="about-page section fade-in">
       <div className="about-container">
-        <h2 className="about-title shimmer">About Us</h2>
+        <h2 className="about-title shimmer">About Us </h2>
         <p className="about-text">
           Welcome to <span className="highlight">Golden Spoon Restaurant</span>, the ultimate
           destination for fine dining in{" "}
